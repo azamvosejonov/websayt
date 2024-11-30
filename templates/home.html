@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Bosh sahifa {% endblock title %}
+
+{% block content %}
+
+        <div class="container">
+            <div class="row">
+                <div class="mt-4"></div>
+                <div class="mt-4">
+                    <h2 class="text-center">Barcha Baholar</h2>
+                    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Ism</th>
+          <th scope="col">Familya</th>
+          <th scope="col">Fan</th>
+          <th scope="col">Baho</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for grade in grades %}
+        <tr>
+          <th scope="row">{{ grade.id }}</th>
+          <td>{{ grade.student.first_name }}</td>
+          <td>{{ grade.student.last_name }}</td>
+          <td>{{ grade.subject.name }}</td>
+          <td>{{grade.grade}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+                </div>
+                <div class="mt-4"></div>
+            </div>
+        </div>
+
+
+{% endblock content %}
